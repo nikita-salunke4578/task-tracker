@@ -8,9 +8,6 @@ A full-stack Task Tracker application that allows users to create, update, delet
 
 https://task-tracker-kemr-mv5qkyghm-nikitasalunke960-4848s-projects.vercel.app/
 
-### Backend API
-
-https://task-tracker-5grr.onrender.com/api/tasks/getTasks
 
 ---
 
