@@ -1,0 +1,6 @@
+com\tasktracker\service\TaskService.class
+com\tasktracker\entity\Task.class
+com\tasktracker\controller\TaskController.class
+com\tasktracker\service\TaskService$TaskStatistics.class
+com\tasktracker\repository\TaskRepository.class
+com\tasktracker\TaskTrackerApplication.class

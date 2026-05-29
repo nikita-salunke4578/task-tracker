@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project Information -->
+    <groupId>com.tasktracker</groupId>
+    <artifactId>task-tracker-backend</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>Task Tracker Backend</name>
+    <description>Spring Boot REST API for Task Tracker Application</description>
+
+    <!-- Parent POM: Spring Boot provides lots of defaults -->
+    <!-- Think of it as inheriting configurations from Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- Properties: Configuration settings -->
+    <properties>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- DEPENDENCIES: Libraries we need for our application -->
+    <!-- Maven downloads these automatically -->
+    <dependencies>
+
+        <!-- Spring Boot Web Starter -->
+        <!-- Provides: REST controllers, HTTP support, embedded Tomcat server -->
+        <!-- Think of it as everything needed to create a web API -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Data JPA Starter -->
+        <!-- JPA = Java Persistence API = way to interact with database -->
+        <!-- Automatically generates database queries -->
+        <!-- Think of it as a translator between Java and SQL -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- PostgreSQL JDBC Driver -->
+        <!-- Lets Java connect to PostgreSQL database -->
+        <!-- JDBC = Java Database Connectivity -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Lombok: Reduces boilerplate code -->
+        <!-- Automatically generates getters, setters, constructors -->
+        <!-- Think of it as a code generator that saves typing -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Spring Boot Starter Test -->
+        <!-- For writing unit tests -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- BUILD: How to compile and package the application -->
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin -->
+            <!-- Lets us run: mvn spring-boot:run -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
