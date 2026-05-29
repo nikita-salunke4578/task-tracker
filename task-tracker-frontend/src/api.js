@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:3030/api/tasks';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://task-tracker-5grr.onrender.com/api/tasks';
 
 async function request(path = '', options = {}) {
   const url = `${API_BASE}${path}`;
